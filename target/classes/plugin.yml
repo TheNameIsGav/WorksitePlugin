@@ -1,0 +1,32 @@
+name: 'Worksite'
+version: '0.1.1'
+main: io.github.TheNameIsGav.Worksite.Worksite
+api-version: '1.18'
+permissions:
+  worksite.admin:
+    description: allows kit command
+    default: op
+
+commands:
+  job:
+    description: Used to register for a new job
+    usage: /job <job title>
+  jobs:
+    description: Lists active jobs
+    usage: /jobs
+  resign:
+    description: Used to leave your position at a job
+    usage: /resign <job title>
+  joblist:
+    description: Lists jobs
+    usage: /joblist
+  worksitehelp:
+    description: Lists commands for Worksite
+    usage: /worksitehelp
+  pay:
+    description: Pays the target player an amount
+    usage: /pay <target> <amount>
+  balance:
+    description: Lists your balance
+    usage: /balance
+
