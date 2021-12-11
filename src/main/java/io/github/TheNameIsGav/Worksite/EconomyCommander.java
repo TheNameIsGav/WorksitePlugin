@@ -53,29 +53,29 @@ public class EconomyCommander implements CommandExecutor {
             return true;
         }
 
-        if(label.equals("payoffline")){
-            if(args.length != 2){
-                return false;
-            }
-
-            double val = 0.0;
-            try{
-                val = Double.parseDouble(args[1]);
-            } catch (NumberFormatException e) {
-                return false;
-            }
-
-            if(val <= 0 && (Worksite.onlinePlayers.get(player.getUniqueId()).balance - val >= 0)){
-                return false;
-            }
-
-            if(Worksite.offlinePayments.get(args[1]) == null){
-                Worksite.offlinePayments.put(args[1], val);
-            } else {
-                Worksite.offlinePayments.put(args[1], Worksite.offlinePayments.get(args[1]) + val);
-            }
-            Worksite.onlinePlayers.get(player.getUniqueId()).balance -= val;
-        }
+//        if(label.equals("payoffline")){
+//            if(args.length != 2){
+//                return false;
+//            }
+//
+//            double val = 0.0;
+//            try{
+//                val = Double.parseDouble(args[1]);
+//            } catch (NumberFormatException e) {
+//                return false;
+//            }
+//
+//            if(val <= 0 && (Worksite.onlinePlayers.get(player.getUniqueId()).balance - val >= 0)){
+//                return false;
+//            }
+//
+//            if(Worksite.offlinePayments.get(args[1]) == null){
+//                Worksite.offlinePayments.put(args[1], val);
+//            } else {
+//                Worksite.offlinePayments.put(args[1], Worksite.offlinePayments.get(args[1]) + val);
+//            }
+//            Worksite.onlinePlayers.get(player.getUniqueId()).balance -= val;
+//        }
 
         if(label.equals("balance")){
             player.sendMessage("$" + Worksite.onlinePlayers.get(player.getUniqueId()).balance);

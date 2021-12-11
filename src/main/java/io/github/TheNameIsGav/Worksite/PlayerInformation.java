@@ -7,7 +7,7 @@ public class PlayerInformation{
     ArrayList<String> jobs = new ArrayList<>();
     ArrayList<Double> xp = new ArrayList<>();
     double balance;
-    double mult;
+    double mult = 1;
 
     PlayerInformation(){}
 
@@ -21,7 +21,4 @@ public class PlayerInformation{
 
     @Override
     public String toString(){ return "Jobs: " + jobs.toString() + " Balance: " + balance; }
-
-    public void awardXP(int jobIndex, double val){ xp.set(jobIndex, xp.get(jobIndex) + val); }
-
 }

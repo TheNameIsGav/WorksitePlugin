@@ -13,7 +13,7 @@ public class BlockBreakerEvent implements Listener {
         PlayerInformation pl = Worksite.onlinePlayers.get(player.getUniqueId());
 
         if(pl.jobs.contains("woodcutter")){ //Woodcutter Block Break Event
-            Woodcutter.HandleWoodCutterBlockBreak(pl, event.getBlock());
+            Woodcutter.HandleWoodcutterBlockBreak(pl, event.getBlock(), player);
         }
 
 

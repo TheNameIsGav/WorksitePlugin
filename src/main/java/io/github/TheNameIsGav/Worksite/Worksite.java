@@ -37,10 +37,14 @@ public class Worksite extends JavaPlugin implements Listener {
         enableAllListeners();
         commandInitializer();
 
-        //theoretically puts all the offline payments into the listing
-        for(String s : playerConfig.getConfigurationSection("OfflinePayments").getKeys(false)){
-            offlinePayments.put(s, playerConfig.getDouble(s + ".val"));
-        }
+//        if(playerConfig.isConfigurationSection("OfflinePayments")){
+//            playerConfig.set("OfflinePayments", "");
+//        }
+//
+//        //theoretically puts all the offline payments into the listing
+//        for(String s : Objects.requireNonNull(playerConfig.getConfigurationSection("OfflinePayments")).getKeys(false)){
+//            offlinePayments.put(s, playerConfig.getDouble(s + ".val"));
+//        }
     }
 
     public FileConfiguration getCustomConfig(){
@@ -144,9 +148,9 @@ public class Worksite extends JavaPlugin implements Listener {
         }
 
         //Writes all currently active offline payments to file
-        for(String name : offlinePayments.keySet()){
-            playerConfig.set("OfflinePayments." + name + ".value", offlinePayments.get(name));
-        }
+//        for(String name : offlinePayments.keySet()){
+//            playerConfig.set("OfflinePayments." + name + ".value", offlinePayments.get(name));
+//        }
 
         instance = null;
         onlinePlayers = null;
