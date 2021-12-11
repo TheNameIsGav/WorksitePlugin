@@ -89,11 +89,10 @@ public class JobsCommander implements CommandExecutor {
             return false;
         }
 
-
-        if(job.equals("hunter")){
-            pl.jobs.add("hunter");
+        if(job.equals("blacksmith")){
+            pl.jobs.add("blacksmith");
             pl.xp.add(0.0);
-            player.sendMessage("Hunter job acquired.");
+            player.sendMessage("Blacksmith job acquired.");
             Worksite.onlinePlayers.put(player.getUniqueId(), pl);
             return true;
         }
@@ -114,10 +113,10 @@ public class JobsCommander implements CommandExecutor {
             return true;
         }
 
-        if(job.equals("crafter")){
-            pl.jobs.add("crafter");
+        if(job.equals("cook")){
+            pl.jobs.add("cook");
             pl.xp.add(0.0);
-            player.sendMessage("Crafter job acquired.");
+            player.sendMessage("Builder job acquired.");
             Worksite.onlinePlayers.put(player.getUniqueId(), pl);
             return true;
         }
@@ -154,6 +153,22 @@ public class JobsCommander implements CommandExecutor {
             return true;
         }
 
+        if(job.equals("hunter")){
+            pl.jobs.add("hunter");
+            pl.xp.add(0.0);
+            player.sendMessage("Hunter job acquired.");
+            Worksite.onlinePlayers.put(player.getUniqueId(), pl);
+            return true;
+        }
+
+        if(job.equals("machinist")){
+            pl.jobs.add("machinist");
+            pl.xp.add(0.0);
+            player.sendMessage("Machinist job acquired.");
+            Worksite.onlinePlayers.put(player.getUniqueId(), pl);
+            return true;
+        }
+
         if(job.equals("miner")){
             pl.jobs.add("miner");
             pl.xp.add(0.0);
@@ -162,10 +177,10 @@ public class JobsCommander implements CommandExecutor {
             return true;
         }
 
-        if(job.equals("weaponsmith")){
-            pl.jobs.add("weaponsmith");
+        if(job.equals("stonemason")) {
+            pl.jobs.add("stonemason");
             pl.xp.add(0.0);
-            player.sendMessage("Weaponsmith job acquired.");
+            player.sendMessage("stonemason job acquired.");
             Worksite.onlinePlayers.put(player.getUniqueId(), pl);
             return true;
         }

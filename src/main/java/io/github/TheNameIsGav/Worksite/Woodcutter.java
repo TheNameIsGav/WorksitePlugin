@@ -1,21 +1,19 @@
 package io.github.TheNameIsGav.Worksite;
 
-import org.bukkit.Bukkit;
-import org.bukkit.entity.Player;
-import org.bukkit.event.EventHandler;
-import org.bukkit.event.Listener;
-import org.bukkit.event.block.BlockBreakEvent;
 
-public class Woodcutter implements Listener {
+import org.bukkit.block.Block;
 
-    @EventHandler
-    public void onBlockBreak(BlockBreakEvent event){
-        Player player = event.getPlayer();
-        PlayerInformation pl = Worksite.onlinePlayers.get(player.getUniqueId());
+public class Woodcutter {
 
-        Bukkit.broadcastMessage(String.valueOf(pl.balance));
-        Bukkit.broadcastMessage(pl.jobs.toString());
+    int baseXP = 2;
 
-        Bukkit.broadcastMessage("You broke a block cunt (in player handler)");
+    public static void addXP(PlayerInformation pl){
+
     }
+
+    public static void HandleWoodCutterBlockBreak(PlayerInformation pl, Block block){
+
+    }
+
+
 }

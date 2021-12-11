@@ -4,12 +4,10 @@ import java.util.*;
 
 public class PlayerInformation{
 
-    ArrayList<String> jobs = new ArrayList<>(); //"Data." + player.getUniqueId().toString + "." + job1 -- string
-    //"Data." + player.getUniqueId().toString + "." + job2 -- string
-    ArrayList<Double> xp = new ArrayList<>(); //"Data." + player.getUniqueId().toString + "." + xp1 -- double
-    //"Data." + player.getUniqueId().toString + "." + xp2 -- double
-
-    double balance; //"Data." + player.getUniqueId().toString + "." + bal -- double
+    ArrayList<String> jobs = new ArrayList<>();
+    ArrayList<Double> xp = new ArrayList<>();
+    double balance;
+    double mult;
 
     PlayerInformation(){}
 
@@ -22,8 +20,8 @@ public class PlayerInformation{
     }
 
     @Override
-    public String toString(){
-        return "Jobs: " + jobs.toString() + " Balance: " + balance;
-    }
+    public String toString(){ return "Jobs: " + jobs.toString() + " Balance: " + balance; }
+
+    public void awardXP(int jobIndex, double val){ xp.set(jobIndex, xp.get(jobIndex) + val); }
 
 }

@@ -1,6 +1,5 @@
 package io.github.TheNameIsGav.Worksite;
 
+public class Cook {
 
-
-public class Builder{
 }

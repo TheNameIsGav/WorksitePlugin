@@ -81,6 +81,7 @@ public class Worksite extends JavaPlugin implements Listener {
         playerConfig.set("Data." + player + ".balance", pl.balance);
         playerConfig.set("Data." + player + ".jobs", pl.jobs);
         playerConfig.set("Data." + player + ".xp", pl.xp);
+        playerConfig.set("Data." + player + ".mult", pl.mult);
 
         try{
             playerConfig.save(playerConfigFile);
@@ -92,14 +93,11 @@ public class Worksite extends JavaPlugin implements Listener {
     PlayerInformation ReadPlayerInformation(UUID player){
         PlayerInformation pl = new PlayerInformation();
         pl.balance = playerConfig.getDouble("Data." + player + ".balance");
-        List<String> jobString = playerConfig.getStringList("Data." + player + ".jobs");
-        List<Double> xpString = playerConfig.getDoubleList("Data." + player + ".xp");
-
-        pl.jobs = (ArrayList<String>) jobString;
-        pl.xp = (ArrayList<Double>) xpString;
+        pl.jobs = (ArrayList<String>) playerConfig.getStringList("Data." + player + ".jobs");
+        pl.xp = (ArrayList<Double>) playerConfig.getDoubleList("Data." + player + ".xp");
+        pl.mult = playerConfig.getDouble("Data." + player + ".mult");
 
         return pl;
-
     }
 
     void commandInitializer(){
@@ -117,16 +115,8 @@ public class Worksite extends JavaPlugin implements Listener {
 
     void enableAllListeners(){
         getServer().getPluginManager().registerEvents(this, this);
-        getServer().getPluginManager().registerEvents(new Woodcutter(), this);
-        getServer().getPluginManager().registerEvents(new Weaponsmith(), this);
-        getServer().getPluginManager().registerEvents(new Miner(), this);
-        getServer().getPluginManager().registerEvents(new Hunter(), this);
-        getServer().getPluginManager().registerEvents(new Fisher(), this);
-        getServer().getPluginManager().registerEvents(new Explorer(), this);
-        getServer().getPluginManager().registerEvents(new Enchanter(), this);
-        getServer().getPluginManager().registerEvents(new Crafter(), this);
-        getServer().getPluginManager().registerEvents(new Builder(), this);
-        getServer().getPluginManager().registerEvents(new Brewer(), this);
+        getServer().getPluginManager().registerEvents(new BlockBreakerEvent(), this);
+        getServer().getPluginManager().registerEvents(new ItemDropEvent(), this);
     }
 
     private void createCustomConfig(){
